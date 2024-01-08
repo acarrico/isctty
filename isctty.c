@@ -36,7 +36,7 @@ dev_t get_proc_ctty_dev()
 
 /* Test whether a file descriptor refers to the process's controlling terminal (ctty) under Linux.
 
-   The Posix procedure isatty tests weather a file descriptor refers to a terminal (see isatty(3)), but as far as I know there isn't a corresponding Posix procedure to check if a file descriptor refers to the process's controlling terminal.
+   The Posix procedure isatty tests whether a file descriptor refers to a terminal (see isatty(3)), but as far as I know there isn't a corresponding Posix procedure to check if a file descriptor refers to the process's controlling terminal.
 
    ISSUE: What happens if a process in another process group opens /dev/tty and passes the file descriptor to you over a pipe, and then you call isctty on the received fd? Would this be a way to get an open fd to device 5,0 that doesn't actually connect to your ctty? Or does it magically now connect to your ctty? Which underlying (virtual) terminal does use for I/O? Curious right? */
 
